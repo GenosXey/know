@@ -53,11 +53,11 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Please Wait...")
+        temp_msg = await message.reply("Veuillez Patientez...")
         try:
             messages = await get_messages(client, ids)
         except:
-            await message.reply_text("Something Went Wrong..!")
+            await message.reply_text("Quelque chose s'est mal passé...!")
             return
         await temp_msg.delete()
     
@@ -89,7 +89,7 @@ async def start_command(client: Client, message: Message):
                 pass
 
 
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video / File Will Be Deleted In {file_auto_delete} (Due To Copyright Issues).\n\n📌 Please Forward This Video / File To Somewhere Else And Start Downloading There.")
+        k = await client.send_message(chat_id = message.from_user.id, text=f"<blockquote>❗️ <u>IMPORTANT</u> ❗️\n\nCe message sera supprimé dans {file_auto_delete} 🫥 (Cause de droit d'auteur ).\n\n📌 Veuillez la transférez pour ne pas la perdre.</blockquote>")
 
         # Schedule the file deletion
         asyncio.create_task(delete_files(madflix_msgs, client, k))
@@ -106,8 +106,8 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    InlineKeyboardButton("A propos de moi", callback_data = "about"),
+                    InlineKeyboardButton("🔒 Fermer", callback_data = "close")
                 ]
             ]
         )
@@ -135,14 +135,14 @@ async def start_command(client: Client, message: Message):
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink)
+            InlineKeyboardButton(text="Rejoindre la chaîne", url=client.invitelink)
         ]
     ]
     try:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'Try Again',
+                    text = 'Maintenant réessayer',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
@@ -169,7 +169,7 @@ async def not_joined(client: Client, message: Message):
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=f"Processing...")
     users = await full_userbase()
-    await msg.edit(f"{len(users)} Users Are Using This Bot")
+    await msg.edit(f"{len(users)} Sont enregistré dans la base de donnée de bot")
 
 
 
@@ -184,7 +184,7 @@ async def send_text(client: Bot, message: Message):
         deleted = 0
         unsuccessful = 0
         
-        pls_wait = await message.reply("<i>Broadcasting Message.. This will Take Some Time</i>")
+        pls_wait = await message.reply("<i>Diffusion du message... Cela prendra un certain temps.</i>")
         for chat_id in query:
             try:
                 await broadcast_msg.copy(chat_id)
@@ -215,7 +215,7 @@ async def send_text(client: Bot, message: Message):
         return await pls_wait.edit(status)
 
     else:
-        msg = await message.reply(f"Use This Command As A Reply To Any Telegram Message With Out Any Spaces.")
+        msg = await message.reply(f"Utilisez cette commande en réponse à tout message Telegram sans espaces.")
         await asyncio.sleep(8)
         await msg.delete()
 
