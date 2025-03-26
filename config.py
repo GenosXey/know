@@ -56,11 +56,11 @@ BOT_STATS_TEXT = "<b>BOT UPTIME :</b>\n{uptime}"
 
 
 
-USER_REPLY_TEXT = "❌Don't Send Me Messages Directly I'm Only File Share Bot !"
+USER_REPLY_TEXT = "❌Ne m'envoyez pas de messages directement, je suis seulement un bot de stockage !"
 
-START_MSG = os.environ.get("START_MESSAGE", "Hello {mention}\n\nI Can Store Private Files In Specified Channel And Other Users Can Access It From Special Link.")
+START_MSG = os.environ.get("START_MESSAGE", "<b>Salut {mention}\n\nJe suis [「ꞢNØW AĐ」🥀Bot](https://t.me/KnowAD_Bot)\nvotre assistant pour vous aidez à retrouver les animés depuis notre canal. Grâce à moi, vous aurez vos fichiers à bon port 😁</b>")
 
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {mention}\n\n<b>You Need To Join In My Channel/Group To Use Me\n\nKindly Please Join Channel</b>")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Salut {mention}\n\n<b>Tu dois d'abrod rejoindre mon canal pour récupérer le fichiers demandé</b>")
 
 
 
