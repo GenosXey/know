@@ -16,7 +16,7 @@ DB_NAME = os.environ.get("DB_NAME", "madflixbotz")
 
 
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002331866173"))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002647818964"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002448868096"))
 
 
 FILE_AUTO_DELETE = int(os.getenv("FILE_AUTO_DELETE", "600")) # auto delete in seconds
@@ -58,7 +58,7 @@ BOT_STATS_TEXT = "<b>BOT UPTIME :</b>\n{uptime}"
 
 USER_REPLY_TEXT = "❌Ne m'envoyez pas de messages directement, je suis seulement un bot de stockage !"
 
-START_MSG = os.environ.get("START_MESSAGE", "<b>Salut {mention}\n\nJe suis [「ꞢNØW AĐ」🥀Bot](https://t.me/KnowAD_Bot)\nvotre assistant pour vous aidez à retrouver les animés depuis notre canal. Grâce à moi, vous aurez vos fichiers à bon port 😁</b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>Salut {mention}\n\nJe suis <a href='https://t.me/KnowAD_Bot'>「ꞢNØW AĐ」🥀Bot</a>\nvotre assistant pour vous aidez à retrouver les animés depuis notre canal. Grâce à moi, vous aurez vos fichiers à bon port 😁</b>")
 
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Salut {mention}\n\n<b>Tu dois d'abrod rejoindre mon canal pour récupérer le fichiers demandé</b>")
 
