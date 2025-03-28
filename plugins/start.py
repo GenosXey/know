@@ -135,7 +135,7 @@ async def start_command(client: Client, message: Message):
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="Rejoindre la chaîne", url=client.invitelink)
+            InlineKeyboardButton(text="Rejoindre la chaîne", url='https://t.me/Animes_Tm_FR')
         ]
     ]
     try:
@@ -143,7 +143,7 @@ async def not_joined(client: Client, message: Message):
             [
                 InlineKeyboardButton(
                     text = 'Maintenant réessayer',
-                    url = f"https://t.me/Animes_Tm_FR"
+                    url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
         )
